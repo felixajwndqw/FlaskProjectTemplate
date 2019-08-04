@@ -1,5 +1,4 @@
-from app import create_app, db
-from app.models import User
+from app import create_app
 
 
 app = create_app()
@@ -12,4 +11,4 @@ def make_shell_context():
 
     Fill dict with <'item': item>.
     """
-    return {'User': User}
+    return {}
