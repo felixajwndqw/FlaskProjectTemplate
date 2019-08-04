@@ -1,0 +1,38 @@
+<meta name="csrf-token" content="{{ csrf_token() }}">
+<script>
+    var csrftoken = $('meta[name=csrf-token]').attr('content');
+
+    $.ajaxSetup({
+        beforeSend: function(xhr, settings) {
+            console.log(csrftoken);
+            if (!/^(GET|HEAD|OPTIONS|TRACE)$/i.test(settings.type) && !this.crossDomain) {
+                xhr.setRequestHeader("X-CSRF-Token", csrftoken)
+            }
+        }
+    })
+</script>
+
+<html>
+    <head>
+        {% if title %}
+        <title>{{ title }} - App</title>
+        {% else %}
+        <title>App</title>
+        {% endif %}
+        <link rel="icon" href="{{url_for('static', filename='favicon.ico')}}">
+    </head>
+    
+    <body>
+        <div>
+            <a href="/">Home</a>
+        </div>
+        <hr>
+        {% block content %}{% endblock %}
+    </body>
+    
+    <footer>
+        <p>Website built on Flask</p>
+        <p><a href="mailto:far1@hotmail.co.uk">
+        far1@hotmail.co.uk</a>.</p>
+    </footer>
+</html>

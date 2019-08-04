@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class='error'>
+    <h1>{{ _('403 - Forbidden') }}</h1>
+    <li><a href="{{ url_for('main.index') }}">{{ _('Back') }}</a></li>
+</div>
+{% endblock %}
