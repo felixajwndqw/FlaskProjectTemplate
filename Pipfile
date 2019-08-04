@@ -8,14 +8,6 @@ gunicorn = "*"
 python-dotenv = "*"
 Flask = "*"
 Flask-Babel = "*"
-Flask-Bootstrap = "*"
-Flask-Login = "*"
-Flask-Migrate = "*"
-Flask-SQLAlchemy = "*"
-Flask-WTF = "*"
-WTForms = "*"
-SQLAlchemy = "*"
-Werkzeug = "*"
 
 [dev-packages]
 

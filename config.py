@@ -9,13 +9,12 @@ load_dotenv(os.path.join(basedir, '.env'))
 class Config(object):
     DEBUG = False
     TESTING = False
-    DATABASE_URI = 'sqlite:///:memory:'
     SECRET_KEY = os.environ.get('SECRET_KEY')
     CSRF_ENABLED = True
 
 
 class ProductionConfig(Config):
-    DATABASE_URI = 'setmelater'
+    pass
 
 
 class DevelopmentConfig(Config):
